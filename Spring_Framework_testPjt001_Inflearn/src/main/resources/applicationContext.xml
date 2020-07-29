@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	<bean id="tWalk" class="LocalPjt.TransportationWalk" /> <!-- 객체 생성 -->
+	
+</beans>
+
+
+<!--
+	 src/main/resources 폴더는 자원을 모아놓는 폴더
+	 IoC(Spring Container) 라는 큰 그릇에 필요한 객체<bean>들을 생성해 모아놓고 가져다 쓴다
+ -->

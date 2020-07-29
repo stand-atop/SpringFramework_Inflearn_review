@@ -3,7 +3,7 @@
   <groupId>spring4</groupId>
   <artifactId>Spring_Framework_testPjt_Inflearn</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+  <!-- 필요한 모듈 -->
   <dependencies>
   	<dependency>
   		<groupId>org.springframework</groupId> <!-- springframework 사용 -->
@@ -12,6 +12,7 @@
   	</dependency>
   </dependencies>
   
+  <!-- 프로젝트 빌드 시 -->
   <build>
   	<plugins>
   		<plugin>
