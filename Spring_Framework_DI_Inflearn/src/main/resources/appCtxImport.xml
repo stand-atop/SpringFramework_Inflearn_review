@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 분리한 다른 설정파일을 import함 -->
+	<import resource="classpath:appCtx2.xml"/>
+	<import resource="classpath:appCtx3.xml"/>
+
+ 	<!-- 생성자를 이용한 의존객체 주입 -->	
+ 	<!-- service 부분만 분리함 -->
+ 	<bean id="studentDAO" class="ems.member.dao.StudentDAO"/>
+ 	
+ 	<bean id="registerService" class="ems.member.service.StudentRegisterService">
+ 		<constructor-arg ref="studentDAO"></constructor-arg> <!-- 주입해준것 -->
+ 	</bean>
+ 	
+ 	<bean id="modifyService" class="ems.member.service.StudentModifyService">
+		<constructor-arg ref="studentDAO" ></constructor-arg>
+	</bean>
+	
+	<bean id="deleteService" class="ems.member.service.StudentDeleteService">
+		<constructor-arg ref="studentDAO" ></constructor-arg>
+	</bean>
+	
+	<bean id="selectService" class="ems.member.service.StudentSelectService">
+		<constructor-arg ref="studentDAO" ></constructor-arg>
+	</bean>
+	
+	<bean id="allSelectService" class="ems.member.service.StudentAllSelectService">
+		<constructor-arg ref="studentDAO" ></constructor-arg>
+	</bean>
+		
+</beans>

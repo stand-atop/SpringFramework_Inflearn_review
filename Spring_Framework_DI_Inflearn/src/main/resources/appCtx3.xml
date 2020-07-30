@@ -4,43 +4,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
  		http://www.springframework.org/schema/beans/spring-beans.xsd">
- 	
- 	<!-- 생성자를 이용한 의존객체 주입 -->	
- 	<bean id="studentDAO" class="ems.member.dao.StudentDAO"/>
- 	
- 	<bean id="registerService" class="ems.member.service.StudentRegisterService">
- 		<constructor-arg ref="studentDAO"></constructor-arg> <!-- 주입해준것 -->
- 	</bean>
- 	
- 	<bean id="modifyService" class="ems.member.service.StudentModifyService">
-		<constructor-arg ref="studentDAO" ></constructor-arg>
-	</bean>
-	
-	<bean id="deleteService" class="ems.member.service.StudentDeleteService">
-		<constructor-arg ref="studentDAO" ></constructor-arg>
-	</bean>
-	
-	<bean id="selectService" class="ems.member.service.StudentSelectService">
-		<constructor-arg ref="studentDAO" ></constructor-arg>
-	</bean>
-	
-	<bean id="allSelectService" class="ems.member.service.StudentAllSelectService">
-		<constructor-arg ref="studentDAO" ></constructor-arg>
-	</bean>
-	
-	<!-- setter를 이용한 의존객체 주입 -->
-	<bean id='dataBaseConnectionInfoDev' class="ems.member.DataBaseConnectionInfo">
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-		<property name="userId" value="scott"/>
-		<property name="userPw" value="tiger"/>
-	</bean>
-	<bean id="dataBaseConnectionInfoReal" class="ems.member.DataBaseConnectionInfo">
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.0.1:1521:xe" />
-		<property name="userId" value="masterid" />
-		<property name="userPw" value="masterpw" />
-	</bean>
-	
-	<bean id="informationService" class="ems.member.service.EMSInformationService">
+ 		
+ 	<!-- service information에 대한 것들만 따로 분리함 -->
+ 	<bean id="informationService" class="ems.member.service.EMSInformationService">
 		<property name="info">
 			<value>Education Management System program was developed in 2015.</value>
 		</property>
@@ -110,5 +76,5 @@
 			</map>
 		</property>
 	</bean>	
-	
+ 		
 </beans>
