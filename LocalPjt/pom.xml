@@ -8,7 +8,7 @@
   	<dependency>
   		<groupId>org.springframework</groupId> <!-- springframework 사용 -->
   		<artifactId>spring-context</artifactId> <!-- 그 안에 spring-context 모듈 사용 -->
-  		<version>4.1.0.RELEASE</version>
+  		<version>5.2.22.RELEASE</version>
   	</dependency>
   </dependencies>
   
